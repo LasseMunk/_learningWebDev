@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nth child</title>
+  <style>
+    li {
+      padding: 0.25rem;
+      margin: 0.25rem;
+      list-style: none;
+    }
+
+    /* first child */
+    li:first-child {
+      background: red;
+    }
+
+    /* last child */
+    li:last-child {
+      background-color: beige;
+    }
+
+    /* nth child. */
+    li:nth-child(3) {
+      background: blueviolet;
+    }
+
+    /* Every 6th 
+    6n is the counter: 
+    +0 is the offset */
+    li:nth-child(6n+0) {
+      background: orange;
+    }
+
+    /* every 7th after 8 */
+    li:nth-child(7n+8) {
+      background: blue;
+    }
+
+    /* every odd / even */
+    li:nth-child(odd) {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+  </style>
+</head>
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+    <li>Item 7</li>
+    <li>Item 8</li>
+    <li>Item 9</li>
+    <li>Item 10</li>
+    <li>Item 11</li>
+    <li>Item 12</li>
+    <li>Item 13</li>
+    <li>Item 14</li>
+    <li>Item 15</li>
+    <li>Item 16</li>
+    <li>Item 17</li>
+    <li>Item 18</li>
+    <li>Item 19</li>
+    <li>Item 20</li>
+  </ul>
+</body>
+</html>

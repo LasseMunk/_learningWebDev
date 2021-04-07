@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation Keyframes</title>
+  <style>
+    body {
+      background: #333;
+    }
+
+    .box {
+      background: white;
+      width: 20px;
+      height: 200px;
+      position: relative;
+    
+      /* animation-name: animate1;
+      animation-duration: 2s; */
+    
+      /* could be infinite */
+      /* animation-iteration-count: infinite; */
+    
+      /* it animates and stays */
+      /* animation-fill-mode: forwards;
+      animation-direction: alternate-reverse;
+      animation-timing-function: ease-in-out;
+     */
+
+     animation: animate1 2s ease-in-out 1s infinite alternate forwards;
+    }
+
+    @keyframes animate1 {
+      from {
+        width: 20px;
+        top: 0;
+      }
+      to {
+        top: 300px;
+        width: 600px;
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

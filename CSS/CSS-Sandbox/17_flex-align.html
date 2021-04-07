@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex basics</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .flex-container {
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: row;
+
+      /* flex align is put on a container
+      not the items them selves. align on the
+      cross-axis */
+      align-items: center;
+      /* align-items: flex-start;
+      align-items: flex-end; */
+
+      /* main-axis alignment */
+      justify-content: center;
+      /* justify-content: flex-start;
+      justify-content: flex-end;
+      justify-content: space-around;
+      justify-content: space-between; */
+
+      height: 50vh;
+    }
+
+    .item {
+      background: #f4f4f4;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+      /* flex-grow: 1; */
+      /* flex: 1;  */
+    }
+
+    /* the flex-container is a flex with
+    align-items: center and justify-content: center 
+    align-self overwrites it pr. class and
+    positions item 1 at the start of the cross-axis
+    and item 3 and the end of the cross-axis*/
+    .item-1 {
+      align-self: flex-start;
+    }
+    .item-3 {
+      align-self: flex-end;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="item item-1">
+      <h3>Item 1</h3>
+    </div>
+    <div class="item item-2">
+    <h3>Item 2</h3>
+  </div>
+    <div class="item item-3">
+    <h3>Item 3</h3>
+  </div>
+  </div>
+</body>
+</html>

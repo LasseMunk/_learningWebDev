@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before and after</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #333;
+      color: #fff;
+    }
+    
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+    }
+
+    header::before {
+      content: '';
+      background: url('https://source.unsplash.com/random') no-repeat center center/cover;
+      opacity: 0.4;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    header > h1 {
+      font-size: 4rem;
+      margin: 1rem;
+    }
+    
+
+    /* E.g. Insert * at required fields */
+    /* .is-required::after {
+      content:'*';
+      color:red;
+      padding-left: 2px;
+    } */
+
+  </style>
+</head>
+<body>
+    <!-- <label class="is-required" for="name">name</label>
+    <input type="text" placeholder="name"> -->
+
+    <header>
+      <h1>Header</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, blanditiis.</p>
+    </header>
+
+    <section>
+      <h3>Lorem, ipsum dolor.</h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ducimus nemo, nesciunt dolores esse in officia laboriosam pariatur. Soluta, excepturi vel. Reiciendis quaerat voluptatibus voluptas illum mollitia nam culpa dolor!</p>
+    </section>
+
+</body>
+</html>

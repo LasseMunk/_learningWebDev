@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Step seq</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    #sequencer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+    }
+    .row {
+      display: flex;
+      height: 13vh;
+      width: 80vw;
+      margin-top: 6px;
+    }
+    .row .column {
+      height: 100%;
+      max-width: 12%;
+      flex: 1;
+      margin: 0 2px;
+      border-radius: 5px;
+      background: rgb(253, 165, 0);
+    }
+    .row .column:hover {
+      /* background: rgb(253, 200, 0); */
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+  
+  <section id="sequencer">
+  <div class="row">
+    <div class="column row-1"></div>
+    <div class="column row-1"></div>
+    <div class="column row-1"></div>
+    <!-- <div class="column row-1"></div>
+    <div class="column row-1"></div>
+    <div class="column row-1"></div>
+    <div class="column row-1"></div>
+    <div class="column row-1"></div> -->
+  </div>
+
+  <div class="row">
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <!-- <div class="column row-2"></div> -->
+  </div>
+
+ <div class="row">
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <!-- <div class="column row-2"></div>
+    <div class="column row-2"></div> -->
+  </div>
+
+  <div class="row">
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <!-- <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div>
+    <div class="column row-2"></div> -->
+  </div>  
+  </section id="sequencer">
+</body>
+</html>

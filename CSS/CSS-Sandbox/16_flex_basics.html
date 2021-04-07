@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex align</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    .flex-container {
+      display: flex;
+      /* default: flex-direction: row; */
+      /* flex-direction: row-reverse; */
+      /* flex-direction: column; */
+      /* flex-direction: column-reverse; */
+      
+      /* when the document is scaled by they automatically
+      adjust to the next row */
+      /* flex-wrap: wrap; */
+
+    }
+
+    .item {
+      background: #f4f4f4;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+      
+      /* all items will automatically scale to take up
+      the entire document width */
+      /* flex-grow: 1; */
+
+      /* flex-grow flex-shrink flex-basis in one param */
+      /* flex-grow: 1 flex-shrink: 0 flex-basis: 200px */
+      /* flex: 1 0 200px; */
+    }
+
+    .item-1 {
+      /* the first container doesn't shrink,
+      the others do */
+      /* flex-shrink: 0;  */
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+    .item-2 {
+      /* the 2nd container will grow and fill up
+      the remaining space */
+      flex-grow: 1;
+      /* is the flex 'width'. Used in combination with
+      flex-grow. A flex-grow: 2 is twice the
+      width of a flex-grow: 1 if both have 
+      flex-basis: 0 */
+      flex-basis: 0;
+    }
+    .item-3 {
+      /* item 3 is twice the size of item 2 */
+      flex-grow: 2;
+      flex-basis: 0;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div class="item item-1">
+      <h3>Item 1</h3>
+    </div>
+    <div class="item item-2">
+    <h3>Item 2</h3>
+  </div>
+    <div class="item item-3">
+    <h3>Item 3</h3>
+  </div>
+  </div>
+</body>
+</html>

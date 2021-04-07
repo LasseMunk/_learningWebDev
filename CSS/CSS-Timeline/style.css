@@ -1,0 +1,181 @@
+:root {
+  --primary-color: #425ba4;
+  --secondary-color: #5b7bb4;
+  --max-width: 1100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* style, variant, weight, size/line-height, family */
+  font: normal 1rem/1.5 'Arial', sans-serif;
+  background: var(--primary-color);
+  color: #fff;
+  /* no scrollbars horizontally */
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+#main-header {
+  background: var(--secondary-color);
+  /* top+bottom left+right */
+  padding: 4rem 0;
+}
+
+.container {
+  /* width of the header */
+  max-width: var(--max-width);
+  /* 0 top+bot auto = push it to the middle */
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+/* Timeline */
+#timeline ul {
+  background: var(--primary-color);
+  /* move it down away from the header */
+  padding: 50px 0;
+}
+
+#timeline ul li {
+  /* no bullet points */
+  list-style:none;
+  /* some elements inside the li's will be absolute, so this
+  must be relative */
+  position: relative;
+  /* the width of the line */
+  width: 6px;
+  /* push into the middle */
+  margin: 0 auto;
+  /* space between each li */
+  padding-top: 50px;
+  background: #fff;
+
+  /* the boxes coming away from the line will be the divs */
+}
+
+/* Boxes */
+#timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 1rem;
+  background: var(--secondary-color);
+  /* enable the animation of the boxes flying in */
+  transition: all 0.5s ease-in-out;
+  /* hide so we can show with the JS event listener */
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Right Side */
+
+/* target every odd div */
+#timeline ul li:nth-child(odd) div {
+  left: 40px;
+  transform: translateX(200px);
+}
+
+/* Left side */
+#timeline ul li:nth-child(even) div {
+  left: -434px;
+  transform: translateX(-200px);
+}
+
+/* Dots */
+#timeline ul li:after {
+  content: '';
+  position: absolute;
+  /* place in the middle */
+  left:50%;
+  transform: translateX(-50%);  
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  /* inherits the color of the line / li */
+  background: inherit;
+  border-radius: 50%;
+  /* Enables us to animate move and change of color with CSS,
+  by adding or removing a specific class to the element with JavaScript */
+  transition: background 0.5s ease-in-out;
+}
+
+/* Arrows Base - pointing to the dots*/
+#timeline div:before {
+  content:'';
+  position: absolute;
+  bottom: 5px;
+  width: 0;
+  height: 0;
+  /* the width and the color will have different properties
+  depending if the arrow is on left or right */
+  border-style: solid;
+}
+
+/* Right Side Arrows */
+#timeline ul li:nth-child(odd) div:before {
+  left: -15px;
+  /* top right bottom left */
+  border-width: 8px 16px 8px 0;
+  /* top right bottom left - shapes the arrow */
+  border-color: transparent var(--secondary-color) transparent transparent;
+}
+/* Left Side Arrows */
+#timeline ul li:nth-child(even) div:before {
+  right: -15px;
+  /* top right bottom left */
+  border-width: 8px 0 8px 16px;
+  /* top right bottom left - shapes the arrow */
+  border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* Show boxes */
+#timeline ul li.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+#timeline ul li.show:after {
+  background: var(--secondary-color);
+}
+
+@media(max-width: 900px) {
+  #timeline ul li div {
+    width: 259px;
+  }
+  #timline ul li:nth-child(even) div { 
+    left: -284px;
+  }
+}
+
+@media(max-width: 600px) {
+/* smartphones */
+  #timeline ul li  {
+    /* with was margin: auto before, which pushed it into
+    the middle */
+   margin-left: 20px; 
+  }
+
+  #timeline ul li div {
+    width: calc(100vw - 90px);
+  }
+
+  #timeline ul li:nth-child(even) div {
+    left: 40px;
+  } 
+  #timeline ul li:nth-child(even) div:before {
+    left: -15px;
+    /* top right bottom left */
+    border-width: 8px 16px 8px 0;
+    /* top right bottom left - shapes the arrow */
+    border-color: transparent var(--secondary-color) transparent transparent;
+  }
+}

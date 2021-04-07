@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Em and Rem</title>
+
+  <style>
+  
+  /* 
+  Just don't use em 
+  The size is a reference to the parent element.
+  Meaning e.g. the font size will increment if you use 
+  nested elements, like <ul> inside <ul>
+  */
+  /* #box-1 {
+      font-size: 20px;
+    }
+
+    #box-1 p {
+      font-size: 1.5em;
+    } */
+
+    /* Use REM because it's a reference
+    to the document root font size. the 
+    <html> tag. Many people set the
+    <html> font size to 10, so the rem unit is
+    an easy multiplier to that font size */
+  
+    html {
+      /* font-size: 10px; */
+      /* setting a percentage will make the
+      font size even more responsive */
+      font-size: 62.5%;
+    }
+
+    #box-2 h3 {
+      font-size: 2rem;
+    }
+
+    #box-2 p {
+      font-size: 1.5rem;
+    }
+
+  </style>
+
+</head>
+<body>
+  <!-- <div id="box-1">
+  <h3>Box One</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eligendi in iure sapiente vitae odio suscipit distinctio repellendus ad alias repudiandae quae molestiae debitis cupiditate, incidunt doloremque aliquam tenetur eius!</p>
+  
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </li>
+    <li>4</li>
+  </ul>
+  </div> -->
+  
+  <div id="box-2">
+  <h3>Box Two</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis eligendi in iure sapiente vitae odio suscipit distinctio repellendus ad alias repudiandae quae molestiae debitis cupiditate, incidunt doloremque aliquam tenetur eius!</p>
+  </div>
+
+</body>
+</html>

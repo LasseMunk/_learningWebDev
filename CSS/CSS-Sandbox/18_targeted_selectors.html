@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Targeted selectors</title>
+  <style>
+    /* look for any paragraph inside a div */
+    /* div p {
+      background: #ddd;
+    } */
+
+    /* Direct child of a div */
+    /* div > p {
+      background: #ddd;
+    } */
+
+    /* Directly after a div */
+    /* div + p {
+      background: #333;
+      color: #fff;
+    } */
+
+    /* By attribute */
+    /* a[target] {
+      background: #ff0000;
+      color: #fff;
+    }
+    a[target="_self"] {
+      background: #00ff00;
+      color: #fff;
+    } */
+
+    /* Specific attribute values */
+    /* make name and email 100% but not 
+    submit button of form*/
+    input[type='text'], 
+    input[type='email'] {
+      width:100%;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <ul>
+      <li>item 1</li>
+      <li>
+        <p>item 2</p>
+      </li>
+      <li>item 3</li>
+    </ul>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet.</p>
+
+  <a href="#" target="_self">Page 1</a>
+  <a href="#">Page 2</a>
+  <a href="http://google.com" target="_blank">Go to google</a>
+
+  <br><br>
+
+  <form>
+    <input type="text" name="name" id="name" placeholder="name">
+    <input type="email" name="email" id="email" placeholder="email">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+
+</html>
