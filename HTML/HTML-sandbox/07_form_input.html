@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form input</title>
+</head>
+<body>
+    <form action="process.php">
+        <div>
+            <!-- text  -->
+            <label for="name" >Name</label><br>
+            <!-- John Doe is written by default  -->
+            <input type="text" id="name" name="name" value="John Doe">
+        </div>
+        <div>
+            <!-- email  -->
+            <label for="name">email</label><br>
+            <!-- write input:TYPE and press tab to autocomplete -->
+            <!-- placeholder goes away when you begin to write  -->
+            <input type="text" id="name" name="name" placeholder="enter an email">
+        </div>
+        <div>
+            <!-- textarea input  -->
+            <label for="name">text</label><br>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <!-- select  -->
+            <label for="sex" id="sex">sex</label><br>
+            <select name="sex" id="sex">
+               <option value="male">Male</option>
+               <!-- selected by default  -->
+               <option value="female" selected>Female</option>
+               <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="age">age</label><br>
+            <!-- only write numbers - not text  -->
+            <input type="number" name="age" id="age">
+        </div>
+        <!-- calendar -->
+        <div>
+            <!-- date  -->
+            <label for="birthdate">birthdate</label><br>
+            <input type="date" name="birtdate" id="birtdate">
+        </div>
+        <!-- radiobuttons -->
+        <div>
+            <label for="membership">Membership</label>
+            <input type="radio" name="membership" value="simple" id="membership"> Simple
+            <!-- checked by default  -->
+            <input type="radio" name="membership" value="standard" id="membership" checked> Standard
+            <input type="radio" name="membership" value="Super" id="membership"> Super
+        </div>
+        <div>
+            <!-- checkbox  -->
+            <label for="membership">I like</label>
+            <!-- cmd+D to select next identical word and have multiple cursers  -->
+            <input type="checkbox" name="likes" value="simple" id="likes"> Simple
+            <input type="checkbox" name="likes" value="standard" id="likes" checked> Standard
+            <input type="checkbox" name="likes" value="Super" id="likes"> Super
+        </div>
+        <!-- input submit  -->
+        <!-- value is what is written inside input button  -->
+        <input type="submit" value="submit">
+        <!-- button submit  -->
+        <!-- <button type="submit">Text here</button> -->
+        <button type="reset">reset</button>
+        <!-- resets everything except for 'john doe' in name because we hardcoded that   -->
+    </form>
+</body>
+</html>
