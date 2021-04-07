@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/utilities.css">
+  <!-- style is below utilities, so we can overwrite
+  general utilities in our style.css -->
+  <link rel="stylesheet" href="css/style.css">
+  <title>Post 1</title>
+</head>
+
+<body id="home">
+  <header class="hero blog top">
+    <!-- the navbar and the hero image and text is here -->
+    <div id="navbar" class="navbar">
+
+      <h1 class="logo">
+        <!-- text-primary is the green color -->
+        <span class="text-primary">
+          <!-- font awesome logo -->
+          <i class="fas fa-book-open"></i> Edge
+        </span>Ledger
+      </h1>
+
+      <nav>
+        <ul>
+          <!-- will direct us to the top of the document
+          therefore body has id="home" -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#cases">Cases</a></li>
+          <li><a href="index.html#blog">Blog</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="content">
+      <h1>Blog</h1>
+    </div>
+  </header>
+  <main>
+    <section class="post">
+      <h2>Blog Post 1</h2>
+      <p class="meta">
+        <i class="fas fa-user"></i>Posted by <strong>John Doe</strong> | April 19 2020
+      </p>
+      <img src="images/blog/blog1.jpg" alt="">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ad repellendus provident, dignissimos iusto
+        ratione unde ipsam nulla cumque repellat beatae optio, officiis praesentium nostrum blanditiis nobis cupiditate
+        molestias. Vero.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatem unde similique, eligendi ducimus,
+        esse eius ratione repellendus asperiores odio quod rerum dolores alias molestias omnis! Blanditiis praesentium
+        sequi, facilis voluptatem animi, doloribus natus voluptate adipisci tempora officiis et minus eius voluptates
+        quae accusantium expedita, itaque reiciendis sint! Excepturi facilis quas iure cupiditate pariatur accusamus
+        asperiores accusantium repudiandae ducimus ipsam?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ipsa in quidem? Ex sequi perferendis omnis
+        ratione distinctio dolorem. Perspiciatis, odio. Consectetur magnam incidunt cum amet soluta, libero ipsum,
+        dignissimos unde dolore modi provident ab! Animi vel vero magni tempora, et velit repellendus cum ullam quis
+        dicta neque. Magni, cupiditate.</p>
+
+    </section>
+
+  </main>
+
+  <footer class="footer bg-dark">
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
+    <p>Copyright &copy; 2020 - EdgeLedger</p>
+  </footer>
+
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    let scrolled = false;
+
+    window.onscroll = function () {
+      if (window.pageYOffset > 100) {
+        navbar.classList.remove('top');
+        if (!scrolled) {
+          navbar.style.transform = 'translateY(-70px)';
+          setTimeout(function () {
+            navbar.style.transform = 'translateY(0)';
+            scrolled = true;
+          }, 500);
+        }
+      } else {
+        navbar.classList.add('top');
+        scrolled = false;
+      }
+    }
+  </script>
+</body>
+
+</html>

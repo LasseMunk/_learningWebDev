@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <title>Hamburger menu</title>
+</head>
+<body>
+  <!-- Menu-wrap surrounds everything including overlay -->
+  <div class="menu-wrap">
+
+    <!-- we only use the checkbox for functionality
+    we can test if it's checked and do
+    css styling acordingly -->
+    <input id="toggler" type="checkbox" class="toggler">
+    <div class="hamburger">
+      <!-- hamburger class creates the square -->
+      <div>
+        <!-- this div is used to create lines inside the 
+        hamburger menu -->
+      </div>
+  </div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="#" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="showcase">
+    <div class="container showcase-container">
+      <h1>Welcome</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur aut esse illo quia repellendus obcaecati eligendi, officia cumque dolor dolorum?</p>
+      <a href="#" class="btn">Read More</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="flex-columns" >
+    <div class="row">
+      <div class="column">
+        <div class="column-1 bg-light">
+          <h2>About #01</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta veritatis officia nisi saepe qui nam blanditiis quasi rem! Quisquam molestiae animi magni quasi aliquid quia laboriosam corporis suscipit aliquam! Odio.
+          </p>
+          <hr>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="column-2">
+         <img src="/img/showcase.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex-columns flex-reverse" >
+    <div class="row">
+      <div class="column">
+        <div class="column-1 bg-light">
+          <h2>About #02</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta veritatis officia nisi saepe qui nam blanditiis quasi rem! Quisquam molestiae animi magni quasi aliquid quia laboriosam corporis suscipit aliquam! Odio.
+          </p>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="column-2">
+         <img src="/img/showcase.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="flex-columns">
+    <div class="row services">
+      <div class="column">
+        <div class="service-1 ">
+          <i class="fas fa-book-reader fa-8x text-primary"></i>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sunt alias eaque quisquam, mollitia dolore consequatur nam ab cupiditate placeat.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="service-2">
+          <i class="fas fa-address-card fa-8x text-secondary"></i>
+          
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sunt alias eaque quisquam, mollitia dolore consequatur nam ab cupiditate placeat.</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="service-3">
+          <i class="fas fa-ambulance fa-8x text-primary"></i>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque sunt alias eaque quisquam, mollitia dolore consequatur nam ab cupiditate placeat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="flex-columns flex-reverse">
+    <div class="rsow">
+
+      <div class="column">
+        <div class="column-2">
+          <img src="/img/showcase.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="column-contact">
+         <h2>Contact Us</h2>
+         <form action="" class="callback-form">
+           <div class="form-control">
+             <input type="text" name="name" id="name" placeholder="Enter Name">
+           </div>
+           <div class="form-control">
+             <input type="email" name="email" id="email" placeholder="Enter Email">
+           </div>
+           <div class="form-control">
+             <input type="text" name="phone" id="phone" placeholder="Enter Phonenumber">
+           </div>
+           <input type="submit" value="send" id="submit" class="btn">
+         </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function closeMenu()  {
+      document.getElementById("toggler").checked = false;
+    }
+  </script>
+
+</body>
+</html>

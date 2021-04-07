@@ -1,0 +1,335 @@
+:root {
+  --primary-color: #c72727;
+  --secondary-color: #f99500;
+  --light-color: #f3f3f3;
+  --dark-color: #333;
+  --max-width: 1100px;
+}
+
+.category {
+  --sports-color: #f99500;
+  --ent-color: #a66bbe;
+  --tech-color: #009cff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+  background: var(--light-color); 
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+ul { 
+  list-style: none;
+}
+
+p {
+  margin: .5rem 0;
+}
+
+img { 
+  /* images will extend out of bounds of the container
+  but this will constrain them to the borders of the container */
+  width: 100%
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* cursive = fonts that emulate handwriting */
+  font-family: 'Staatliches', cursive;
+  margin-bottom: .55rem; 
+  line-height: 1.3;
+}
+
+/* Utility */
+.container  {
+  max-width: var(--max-width);
+  /* push to middle */
+  margin: auto;
+  padding: 0 2rem;
+  /* so it always shows the content within */
+  overflow: hidden;
+}
+
+.category {
+  display: inline-block;
+  color: #fff;
+  font-size: .55rem;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.category-sports { background: var(--sports-color) }
+.category-ent { background: var(--ent-color) }
+.category-tech { background: var(--tech-color) }
+
+.btn {
+  display: inline-block;
+  /* border: none in case we use it on an actual button */
+  border: none; 
+  background: var(--dark-color);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-light { background: var(--light-color)}
+.btn-primary { background: var(--primary-color)}
+.btn-secondary { background: var(--secondary-color)}
+
+.btn:hover {
+  /* will have effect no matter which color it has */
+  opacity: 0.9;
+}
+
+.btn-block {
+  /* will make it a block so it goes all the way across the container */
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+}
+
+.bg-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.bg-dark h1,
+.bg-dark h2,
+.bg-dark h3,
+.bg-dark a,
+.bg-primary h1,
+.bg-primary h2,
+.bg-primary h3,
+.bg-primary a,
+.bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3,
+.bg-secondary a {
+  color: #fff;
+}
+
+.py-1 { padding: 1.5rem 0 }
+.py-2 { padding: 2rem 0 }
+.py-3 { padding: 3rem 0 }
+.p-1 { padding: 1.5rem }
+.p-2 { padding: 2rem }
+.p-3 { padding: 3rem }
+
+.l-heading {
+  font-size: 3rem;
+}
+
+.list li {
+  padding: .5rem 0;
+  border-bottom: 1px dotted #555;
+}
+
+.list li a:hover {
+  /* !important overrides previous color settings */
+  color: var(--primary-color) !important;
+}
+/* Inner Page Grid Container */
+.page-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  margin: 2rem 0;
+  gap: 1.5rem;
+}
+/* the article (main) container */
+.page-container > *:first-child {
+  /* increase span, if you want to have more aside 
+  elements than 3, next to the main article */
+  grid-row: 1 / span 3;
+}
+
+/* Navigation */
+#main-nav {
+  background: #fff;
+  position: sticky;
+  /* because sticky, needs to know where to stick */
+  top: 0;
+  /* always on top */
+  z-index: 2;
+}
+
+#main-nav .container {
+  display: grid;
+  grid-template-columns: 6fr 3fr 2fr; 
+  padding: 1rem;
+  align-items: center;
+}
+
+#main-nav .logo {
+  width: 180px;
+}
+
+#main-nav ul {
+  /* align to the right / end of container */
+   justify-self: end;
+   display: flex;
+}
+
+#main-nav ul li a {
+  padding: .75rem;
+  font-weight: bold;
+}
+
+#main-nav ul li a.current {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+#main-nav ul li a:hover {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+#main-nav .social {
+  /* if we were targeting the parent container, we could
+  use justify-content, but now we are targeting the actual
+  content, so justify-self */
+  justify-self: center;
+}
+
+#main-nav .social i {
+  color: #777;
+  margin-right: 0.5rem;
+}
+
+/* Showcase */
+#showcase {
+  color: #fff;
+  background: #333;
+  padding: 2rem;
+  /* The showcase:before will be positioned absolute */
+  position: relative;
+}
+
+#showcase:before {
+  content:'';
+  background: url('../img/featured.jpg') no-repeat 
+  center center/cover;
+  /* positions on top of showcase */
+  position: absolute; 
+  top: 0;
+  left: 0;;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+#showcase .showcase-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+#showcase .showcase-content {
+  /* puts text on top of image */
+  z-index: 1;
+}
+
+#showcase .showcase-content p {
+  margin-bottom: 1rem;
+}
+
+/* Home Articls */
+#home-articles .articles-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+#home-articles .articles-container > *:first-child,
+#home-articles .articles-container > *:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  grid-column: 1 / span 2;
+}
+
+#home-articles .articles-container > *:last-child {
+  grid-column: 2 / span 2;
+}
+
+/* Articles */
+#article .meta {
+  display: flex;
+  /* pushes the category to the right and the auther to the left */
+  justify-content: space-between;
+  align-items: center;
+  background: #eee;
+  padding: 0.5rem;
+}
+
+#article .meta .category {
+  margin-top: 0.4rem;
+}
+
+/* Footer */
+#main-footer {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+#main-footer img {
+  width: 150px;
+}
+#main-footer a {
+  color: #fff;
+}
+
+#main-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* even if it isn't a div, we're going to target the
+last child in the .footer-container */
+#main-footer .footer-container > *:last-child {
+  background: #444;
+  grid-column: 1 / span 4;
+  padding: .5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type="email"] {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type="submit"] {
+  width: 90%;
+}

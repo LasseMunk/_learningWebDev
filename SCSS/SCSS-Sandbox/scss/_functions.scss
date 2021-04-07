@@ -1,0 +1,22 @@
+// Set Text Color
+// Function returns something
+// Mixin is a set of styles you want to include
+
+@function set-text-color($color) {
+  // test if background has lightness > 50%
+  // and sets a dark text if true, and light text if
+  // false
+  @if(lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// Transform mixin
+
+@mixin transform($property) {
+  --webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
