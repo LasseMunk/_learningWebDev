@@ -1,2 +1,0 @@
-// MEDIATOR PATTERN
-
