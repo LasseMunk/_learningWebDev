@@ -18,6 +18,7 @@ ul {
 }
 
 .container {
+  
   max-width: 768px;
   margin: auto;
   padding: 0 20px;
@@ -30,6 +31,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
+ 
 }
 
 .card {

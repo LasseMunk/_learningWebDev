@@ -1,7 +1,12 @@
-const FeedbackStats = ({ feedbackData }) => {
+import { useContext } from "react";
+import FeedbackContext from "../context/FeedbackContext";
+
+const FeedbackStats = () => {
+
+	const { feedbackData} = useContext(FeedbackContext);
+	
 	// calculate ratings avg
 	// reduce creates the sum, then devide by the array length
-	
 	let average =
 		feedbackData.reduce((acc, cur) => {
 			return acc + cur.rating;
